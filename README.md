@@ -4,3 +4,4 @@
 
 Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
 
+Project 6 from OpenClassroom - JavaScript Patterns and Accessibility
