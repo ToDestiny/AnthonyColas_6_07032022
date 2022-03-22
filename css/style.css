@@ -31,8 +31,9 @@ h1 {
 }
 
 .photographer_section article {
-  height: 358pxm;
-  width: 500px;
+  margin: 0;
+  height: 22.375em;
+  width: 25.875em;
   justify-self: center;
   display: flex;
   justify-content: center;
