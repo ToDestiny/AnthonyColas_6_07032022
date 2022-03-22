@@ -35,5 +35,4 @@ async function init () {
   displayData(data.photographers)
 };
 
-console.log("4" + 2);
 init()
