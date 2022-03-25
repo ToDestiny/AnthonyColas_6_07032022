@@ -1,4 +1,4 @@
-import { photographerFactory } from '../factories/photographer';
+import { photographerFactory } from '../factories/photographer.mjs';
 
 export async function getDataApi() {
     // Penser à remplacer par les données récupérées dans le json
