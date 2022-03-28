@@ -22,11 +22,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('myparam');
 
-function displayPhotographer(photographer) {
-    console.log(photographer);
+function displayMedia(photos) {
+    console.log(photos);
     const photoSection = document.querySelector('.photo_section');
 
-    photographer.forEach((media) => {
+    photos.forEach((media) => {
         const photographerPhoto = mediaFactory(media);
         const userCardDOM = photographerPhoto.getUserCardDOM();
         photoSection.appendChild(userCardDOM);
@@ -36,14 +36,12 @@ function displayPhotographer(photographer) {
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
-    const photographer = data.photographers.filter(function (number) {
-        return number.id == id;
-    });
     const photos = data.media.filter(function (elt) {
         return elt.photographerId == id;
     });
+    console.log('test');
     console.log(photos);
-    displayPhotographer(photographer);
+    displayMedia(photos);
 }
 
 init();

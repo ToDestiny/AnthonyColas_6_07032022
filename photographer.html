@@ -14,7 +14,7 @@
     <main id="main">
       <div class="photograph-header">
         <div class="head_left">
-          <h1>Mimi Keel</h1>
+          <h1 id="photographer_name">Mimi Keel</h1>
           <h2>London, UK</h2>
           <p>Blabla</p>
         </div>
@@ -23,13 +23,15 @@
           <img class="img" src="./assets/photographers/MimiKeel.jpg" />
         </div>
       </div>
-      <label for="dog-names">Trier par</label>
-      <select name="dog-names" id="dog-names">
-        <option value="rigatoni">Popularité</option>
-        <option value="dave">Date</option>
-        <option value="pumpernickel">Titre</option>
-      </select>
-      <div class="photo_section"></div>
+      <div class="photo_filter">
+        <label for="photo_select">Trier par</label>
+        <select name="photo_select" id="photo_select">
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="title">Titre</option>
+        </select>
+      </div>
+      <section class="photo_section"></section>
     </main>
     <div id="contact_modal">
 			<div class="modal">

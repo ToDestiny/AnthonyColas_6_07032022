@@ -112,12 +112,29 @@ form input {
     color: #525252;
 }
 
-/* .head_img {
-
-} */
-
 .img {
     height: 200px;
     width: 200px;
     border-radius: 50%;
+}
+
+.photo_filter {
+    margin: 20px 20px 20px 55px;
+}
+
+.photo_section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 33.333333%;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    width: 95%;
+    margin: 20px;
+}
+
+.photo_section img {
+    height: 300px;
+    width: 350px;
 }
