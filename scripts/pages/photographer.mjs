@@ -43,16 +43,22 @@ function displayInfo(photographer) {
     document.getElementById('photographer_name').style.color = '#D3573C';
     document.getElementById('photographer_name').style.fontSize = '54px';
     document.getElementById('photographer_name').style.margin = '0';
+
     document.getElementById(
         'photographer_city'
     ).innerHTML = `${photographer.city}, ${photographer.country}`;
     document.getElementById('photographer_city').style.color = '#901C1C';
     document.getElementById('photographer_city').style.fontSize = '24px';
+
     document.getElementById(
         'photographer_tagline'
     ).innerHTML = `${photographer.tagline}`;
     document.getElementById('photographer_city').style.color = '#525252';
     document.getElementById('photographer_city').style.fontSize = '18px';
+
+    document
+        .getElementById('photographer_img')
+        .setAttribute('src', `assets/photographers/${photographer.portrait}`);
 }
 
 async function init() {

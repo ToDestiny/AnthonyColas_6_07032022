@@ -12,6 +12,10 @@
     margin: 0 100px;
 }
 
+.head_left {
+    width: 33%;
+}
+
 .contact_button {
     position: relative;
     font-size: 20px;
@@ -24,7 +28,11 @@
     background-color: #901c1c;
     border-radius: 5px;
     cursor: pointer;
-    left: -50px;
+    left: -70px;
+}
+
+.no-left {
+    left: 0px;
 }
 
 .modal {
