@@ -22,8 +22,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const id = urlParams.get('myparam');
 
+function displayFormName(photographer) {
+    document.getElementById('form_name').innerHTML = `${photographer.name}`;
+}
+
 function displayMedia(photos) {
-    console.log(photos);
     const photoSection = document.querySelector('.photo_section');
 
     photos.forEach((media) => {
@@ -33,14 +36,37 @@ function displayMedia(photos) {
     });
 }
 
+function displayInfo(photographer) {
+    document.getElementById(
+        'photographer_name'
+    ).innerHTML = `${photographer.name}`;
+    document.getElementById('photographer_name').style.color = '#D3573C';
+    document.getElementById('photographer_name').style.fontSize = '54px';
+    document.getElementById('photographer_name').style.margin = '0';
+    document.getElementById(
+        'photographer_city'
+    ).innerHTML = `${photographer.city}, ${photographer.country}`;
+    document.getElementById('photographer_city').style.color = '#901C1C';
+    document.getElementById('photographer_city').style.fontSize = '24px';
+    document.getElementById(
+        'photographer_tagline'
+    ).innerHTML = `${photographer.tagline}`;
+    document.getElementById('photographer_city').style.color = '#525252';
+    document.getElementById('photographer_city').style.fontSize = '18px';
+}
+
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
     const photos = data.media.filter(function (elt) {
         return elt.photographerId == id;
     });
-    console.log('test');
-    console.log(photos);
+    const photographer = data.photographers.filter(function (elt) {
+        return elt.id == id;
+    });
+
+    displayFormName(photographer[0]);
+    displayInfo(photographer[0]);
     displayMedia(photos);
 }
 

@@ -1,11 +1,7 @@
 export function mediaFactory(data) {
-    console.log(data);
     const { id, photographerId, title, image, likes, date, price } = data;
 
-    console.log(title);
-    console.log(image);
     const picture = `assets/media/${photographerId}/${image}`;
-    console.log(picture);
 
     function getUserCardDOM() {
         const article = document.createElement('article');
