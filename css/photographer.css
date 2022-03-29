@@ -181,3 +181,8 @@ form input {
     width: 15rem;
     border-radius: 5px 5px 0 0px;
 }
+
+#player {
+    height: 300px;
+    width: 350px;
+}

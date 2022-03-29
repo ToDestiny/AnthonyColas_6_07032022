@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ToDestiny/Front-End-Fisheye/issues"
   },
-  "homepage": "https://github.com/ToDestiny/Front-End-Fisheye#readme"
+  "homepage": "https://github.com/ToDestiny/Front-End-Fisheye#readme",
+  "devDependencies": {
+    "plyr": "^3.6.12"
+  }
 }

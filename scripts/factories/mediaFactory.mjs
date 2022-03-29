@@ -15,14 +15,24 @@ export function mediaFactory(data) {
             img.style.objectFit = 'cover';
             return img;
         } else {
-            console.log(video);
-            const img = document.createElement('img');
-            return img;
-        }
-    }
+            const video = document.createElement('video');
+            video.setAttribute('id', 'player');
+            video.setAttribute('playsinline', '');
+            video.setAttribute('controls', '');
+            const source = document.createElement('source');
+            source.setAttribute('src', movie);
+            source.setAttribute('type', 'video/mp4');
+            video.appendChild(source);
 
-    function showVideo(video) {
-        console.log(video);
+            /*                 <track
+                    kind="captions"
+                    label="English captions"
+                    src="/path/to/captions.vtt"
+                    srclang="fr"
+                    default
+                /> */
+            return video;
+        }
     }
 
     function getUserCardDOM() {
