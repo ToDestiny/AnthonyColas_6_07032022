@@ -37,6 +37,7 @@ function displayMedia(photos) {
 }
 
 function displayInfo(photographer) {
+    console.log(photographer);
     document.getElementById(
         'photographer_name'
     ).innerHTML = `${photographer.name}`;
@@ -79,10 +80,10 @@ async function init() {
         return elt.id == id;
     });
 
-    displayFormName(photographer[0]);
     displayInfo(photographer[0]);
     displayFooter(photographer[0]);
     displayMedia(photos);
+    displayFormName(photographer[0]);
 }
 
 init();
