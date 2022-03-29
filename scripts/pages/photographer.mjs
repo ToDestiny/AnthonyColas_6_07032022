@@ -37,7 +37,6 @@ function displayMedia(photos) {
 }
 
 function displayInfo(photographer) {
-    console.log(photographer);
     document.getElementById(
         'photographer_name'
     ).innerHTML = `${photographer.name}`;
@@ -56,14 +55,13 @@ function displayInfo(photographer) {
     ).innerHTML = `${photographer.tagline}`;
     document.getElementById('photographer_city').style.color = '#525252';
     document.getElementById('photographer_city').style.fontSize = '18px';
-
     document
         .getElementById('photographer_img')
         .setAttribute('src', `assets/photographers/${photographer.portrait}`);
+    document.getElementById('photographer_img').style.objectFit = 'cover';
 }
 
 function displayFooter(media) {
-    console.log(media);
     document.getElementById('footer').innerHTML = `${media.likes}`;
     /*     media.forEach((media) => {
         console.log('test');
