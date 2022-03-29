@@ -61,6 +61,14 @@ function displayInfo(photographer) {
         .setAttribute('src', `assets/photographers/${photographer.portrait}`);
 }
 
+function displayFooter(media) {
+    console.log(media);
+    document.getElementById('footer').innerHTML = `${media.likes}`;
+    /*     media.forEach((media) => {
+        console.log('test');
+    }); */
+}
+
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
@@ -73,6 +81,7 @@ async function init() {
 
     displayFormName(photographer[0]);
     displayInfo(photographer[0]);
+    displayFooter(photographer[0]);
     displayMedia(photos);
 }
 

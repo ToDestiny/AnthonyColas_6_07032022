@@ -1,3 +1,7 @@
+.main {
+    padding-bottom: 50px;
+}
+
 #contact_modal {
     display: none;
 }
@@ -127,7 +131,15 @@ form input {
 }
 
 .photo_filter {
-    margin: 20px 20px 20px 55px;
+    margin: 20px 20px 50px 55px;
+}
+
+#photo_label {
+    font-weight: bold;
+}
+
+#select {
+    font-weight: bold;
 }
 
 .photo_section {
@@ -157,4 +169,15 @@ form input {
 
 .form_name {
     max-width: 13ch;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 2rem;
+    z-index: 999;
+    background-color: #db8876;
+    height: 3rem;
+    width: 15rem;
+    border-radius: 5px 5px 0 0px;
 }

@@ -83,7 +83,7 @@
 				</form>
 			</div>
       <div class="photo_filter">
-        <label for="photo_select">Trier par</label>
+        <label id="photo_label" for="photo_select">Trier par</label>
         <select name="photo_select" id="photo_select">
           <option value="popularity">Popularité</option>
           <option value="date">Date</option>
@@ -91,6 +91,9 @@
         </select>
       </div>
       <section class="photo_section"></section>
+      <div class="footer">
+        <p id="footer"></p>
+      </div>
 		</div>
     <script  src="./scripts/utils/contactForm.js"></script>
     <script  type="module" src="./scripts/pages/photographer.mjs"></script>
