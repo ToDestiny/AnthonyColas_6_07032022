@@ -37,7 +37,6 @@ export function mediaFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement('article');
-        console.log(imageExist);
         const obj = showImage();
         const div = document.createElement('div');
         div.style.display = 'flex';

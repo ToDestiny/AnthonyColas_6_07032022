@@ -26,7 +26,7 @@
         </div>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-modal="true" role="dialog" aria-describedby="Modal de contact du photographe">
 			<div class="modal">
 				<header>
           <div class="container_name">
@@ -35,7 +35,7 @@
           </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="post">
 					<div>
 						<label for="surname">Prénom</label>
 						<input 
@@ -65,7 +65,7 @@
               name="email" 
               required 
               minlength="2" 
-              maxlength="15" 
+              maxlength="30" 
               size="20"/>
           </div>
           <div>
@@ -79,7 +79,7 @@
               maxlength="150" 
               size="150"/>
             </div>
-            <button class="contact_button no-left">Envoyer</button>
+            <button id="submit_btn" class="contact_button no-left" onclick="event.preventDefault(); submitInfo()">Envoyer</button>
           </div>
 				</form>
 			</div>
