@@ -1,7 +1,8 @@
-export function mediaFactory(data) {
+export function mediaFactory(data, indexImage) {
     const { id, photographerId, title, video, image, likes, date, price } =
         data;
 
+    console.log(indexImage);
     const picture = `assets/media/${photographerId}/${image}`;
     const movie = `assets/media/${photographerId}/${video}`;
 
@@ -13,6 +14,16 @@ export function mediaFactory(data) {
             img.setAttribute('src', picture);
             img.setAttribute('alt', `Photo ${image}`);
             img.style.objectFit = 'cover';
+            img.classList.add('show');
+            img.addEventListener('click', function () {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.style.display = 'block';
+                console.log(indexImage);
+                lightbox.setAttribute('data-index', indexImage);
+                const image = document.getElementById('lightboxImg');
+                image.src = picture;
+            });
+            // img.setAttribute('onclick', 'displayLightbox(this.src)');
             return img;
         } else {
             const video = document.createElement('video');
@@ -23,14 +34,6 @@ export function mediaFactory(data) {
             source.setAttribute('src', movie);
             source.setAttribute('type', 'video/mp4');
             video.appendChild(source);
-
-            /*                 <track
-                    kind="captions"
-                    label="English captions"
-                    src="/path/to/captions.vtt"
-                    srclang="fr"
-                    default
-                /> */
             return video;
         }
     }
@@ -55,10 +58,13 @@ export function mediaFactory(data) {
         h5.style.marginTop = '35px';
         h5.style.color = '#911C1C';
         h5.textContent = `${likes} \u2665`;
+        h5.setAttribute('onclick', 'incrementLike()');
+        h5.setAttribute('class', 'like');
         article.appendChild(obj);
         article.appendChild(div);
         div.appendChild(h4);
         div.appendChild(h5);
+
         return article;
     }
     return {

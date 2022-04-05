@@ -29,8 +29,8 @@ function displayFormName(photographer) {
 function displayMedia(photos) {
     const photoSection = document.querySelector('.photo_section');
 
-    photos.forEach((media) => {
-        const photographerPhoto = mediaFactory(media);
+    photos.forEach((media, i) => {
+        const photographerPhoto = mediaFactory(media, i);
         const userCardDOM = photographerPhoto.getUserCardDOM();
         photoSection.appendChild(userCardDOM);
     });
@@ -71,13 +71,14 @@ function displayFooter(media) {
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
+
     const photos = data.media.filter(function (elt) {
         return elt.photographerId == id;
     });
     const photographer = data.photographers.filter(function (elt) {
         return elt.id == id;
     });
-
+    console.log((window.photosData = data));
     displayInfo(photographer[0]);
     displayFooter(photographer[0]);
     displayMedia(photos);
