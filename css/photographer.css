@@ -186,3 +186,7 @@ form input {
     height: 300px;
     width: 350px;
 }
+
+.no-scroll {
+    overflow: hidden;
+}

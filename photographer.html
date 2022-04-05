@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
     <title>Fisheye - Photographe </title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <img src="assets/images/logo.png" class="logo" />
     </header>
-    <main id="main">
+    <main id="main-wrapper" aria-hidden="false">
       <div class="photograph-header">
         <div class="head_left">
           <h1 id="photographer_name"></h1>
@@ -33,7 +33,7 @@
             <h2>Contactez-moi</h2>
             <h2 id="form_name"></h2>
           </div>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img class="modal-close-btn" src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
 				<form id="post">
 					<div>
