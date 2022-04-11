@@ -23,7 +23,6 @@ export function mediaFactory(data, indexImage) {
                 const image = document.getElementById('lightboxImg');
                 image.src = picture;
             });
-            // img.setAttribute('onclick', 'displayLightbox(this.src)');
             return img;
         } else {
             const video = document.createElement('video');

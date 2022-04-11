@@ -85,4 +85,17 @@ async function init() {
     displayFormName(photographer[0]);
 }
 
+const modal = document.getElementById('lightbox');
+
+window.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+        document
+            .getElementById('main-wrapper')
+            .setAttribute('aria-hidden', 'false');
+        document.getElementById('lightbox').setAttribute('aria-hidden', 'true');
+        modal.style.display = 'none';
+        document.querySelector('.modal-close-btn').focus();
+    }
+});
+
 init();
