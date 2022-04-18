@@ -61,8 +61,10 @@ function displayInfo(photographer) {
     document.getElementById('photographer_img').style.objectFit = 'cover';
 }
 
-function displayFooter(media) {
-    document.getElementById('footer').innerHTML = `${media.likes}`;
+function displayFooter(photographer) {
+    document.getElementById(
+        'footer'
+    ).innerHTML = `plop ${photographer.likes} ${photographer.price}€/jour`;
     /*     media.forEach((media) => {
         console.log('test');
     }); */
@@ -78,7 +80,7 @@ async function init() {
     const photographer = data.photographers.filter(function (elt) {
         return elt.id == id;
     });
-    console.log((window.photosData = data));
+    console.log(photographer[0]);
     displayInfo(photographer[0]);
     displayFooter(photographer[0]);
     displayMedia(photos);

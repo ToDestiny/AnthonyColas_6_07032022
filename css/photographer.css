@@ -210,9 +210,8 @@ form input {
     overflow: hidden;
 }
 
-.top-right {
+#close-btn {
     top: 0;
-    right: 0;
 }
 
 #lightbox {
@@ -225,14 +224,29 @@ form input {
     display: none;
 }
 
-#lightbox.active {
+.lightbox-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80vh;
+    width: 80%;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    padding: 4px;
+.lightbox-right {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#close-btn {
+    height: 100%;
+}
+
+#lightboxImg {
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
+    margin-left: 20px;
 }

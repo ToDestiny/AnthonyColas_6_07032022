@@ -2,7 +2,6 @@ export function mediaFactory(data, indexImage) {
     const { id, photographerId, title, video, image, likes, date, price } =
         data;
 
-    console.log(indexImage);
     const picture = `assets/media/${photographerId}/${image}`;
     const movie = `assets/media/${photographerId}/${video}`;
 
@@ -18,7 +17,6 @@ export function mediaFactory(data, indexImage) {
             img.addEventListener('click', function () {
                 const lightbox = document.getElementById('lightbox');
                 lightbox.style.display = 'block';
-                console.log(indexImage);
                 lightbox.setAttribute('data-index', indexImage);
                 const image = document.getElementById('lightboxImg');
                 image.src = picture;

@@ -94,8 +94,14 @@
       </div>
       <section class="photo_section"></section>
       <div id="lightbox" class="hidden">
-        <img src="#" id="lightboxImg"/>
-        <i class="fa fa-times fa-2xl" aria-hidden="true" onclick="closePicture()"></i>
+        <div class="lightbox-container">
+          <i class="fa-solid fa-angle-left fa-3x"  id="left-arrow" aria-hidden="true" onclick="leftPicture()"></i>
+          <img src="#" id="lightboxImg" class="lightbox-left"/>
+          <div class="lightbox-right">
+            <i class="fa fa-times fa-3x" id="close-btn" aria-hidden="true" onclick="closePicture()"></i>
+            <i class="fa-solid fa-angle-right fa-3x" id="right-arrow" aria-hidden="true" onclick="rightPicture()"></i>
+          </div>
+        </div>
       </div>
       <div class="footer">
         <p id="footer"></p>
