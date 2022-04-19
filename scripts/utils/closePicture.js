@@ -11,7 +11,6 @@ function closePicture() {
 function leftPicture() {
     const lightbox = document.getElementById('lightbox');
     let method = lightbox.getAttribute('data-index');
-    console.log(method);
     if (method >= 1) {
         method--;
         lightbox.setAttribute('data-index', method);

@@ -85,6 +85,7 @@ async function init() {
     displayFooter(photographer[0]);
     displayMedia(photos);
     displayFormName(photographer[0]);
+    return data;
 }
 
 const modal = document.getElementById('lightbox');
@@ -100,4 +101,44 @@ window.addEventListener('keydown', function (event) {
     }
 });
 
-init();
+(async () => {
+    const data = await init();
+
+    const left = document.getElementById('left-arrow');
+    const right = document.getElementById('right-arrow');
+    const photos = data.media.filter(function (elt) {
+        return elt.photographerId == id;
+    });
+
+    left.addEventListener('click', function () {
+        const lightbox = document.getElementById('lightbox');
+        let index = lightbox.getAttribute('data-index');
+        if (index >= 1) {
+            index--;
+            lightbox.setAttribute('data-index', index);
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const id = urlParams.get('myparam');
+            const image = document.getElementById('lightboxImg');
+            const picture = `assets/media/${id}/${photos[index].image}`;
+            image.src = picture;
+        }
+    });
+    right.addEventListener('click', function () {
+        const lightbox = document.getElementById('lightbox');
+        let index = lightbox.getAttribute('data-index');
+        let j = photos.length;
+        let i = 0;
+        if (i < j) {
+            i++;
+            index++;
+            lightbox.setAttribute('data-index', index);
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const id = urlParams.get('myparam');
+            const image = document.getElementById('lightboxImg');
+            const picture = `assets/media/${id}/${photos[index].image}`;
+            image.src = picture;
+        }
+    });
+})();
