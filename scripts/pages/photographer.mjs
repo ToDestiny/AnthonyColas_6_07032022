@@ -120,8 +120,14 @@ window.addEventListener('keydown', function (event) {
             const urlParams = new URLSearchParams(queryString);
             const id = urlParams.get('myparam');
             const image = document.getElementById('lightboxImg');
-            const picture = `assets/media/${id}/${photos[index].image}`;
-            image.src = picture;
+            const imageExist = 'image' in photos[index];
+            if (imageExist) {
+                const picture = `assets/media/${id}/${photos[index].image}`;
+                image.src = picture;
+            } else {
+                const video = `assets/media/${id}/${photos[index].video}`;
+                image.src = video;
+            }
         }
     });
     right.addEventListener('click', function () {
@@ -137,8 +143,14 @@ window.addEventListener('keydown', function (event) {
             const urlParams = new URLSearchParams(queryString);
             const id = urlParams.get('myparam');
             const image = document.getElementById('lightboxImg');
-            const picture = `assets/media/${id}/${photos[index].image}`;
-            image.src = picture;
+            const imageExist = 'image' in photos[index];
+            if (imageExist) {
+                const picture = `assets/media/${id}/${photos[index].image}`;
+                image.src = picture;
+            } else {
+                const video = `assets/media/${id}/${photos[index].video}`;
+                image.src = video;
+            }
         }
     });
 })();
