@@ -172,10 +172,13 @@ window.addEventListener('keydown', function (event) {
             } else {
                 const img = document.getElementById('img-lightbox');
                 img.style.display = 'none';
-                const video = document.getElementById('video-lightbox');
-                video.style.display = 'flex';
-                /*                 const video = `assets/media/${id}/${photos[index].video}`;
-                image.src = video; */
+                const videoBox = document.getElementById('video-lightbox');
+                videoBox.style.display = 'flex';
+                const videoPath = `assets/media/${id}/${photos[index].video}`;
+                const videoSource = document.getElementById('source-video');
+                const videoMedia = document.getElementById('player-modal');
+                videoSource.setAttribute('src', videoPath);
+                videoMedia.load();
             }
         }
     });

@@ -13,7 +13,6 @@ export function mediaFactory(data, indexImage) {
             img.setAttribute('src', picture);
             img.setAttribute('alt', `Photo ${image}`);
             img.style.objectFit = 'cover';
-            img.classList.add('show');
             img.addEventListener('click', function () {
                 const lightbox = document.getElementById('lightbox');
                 lightbox.style.display = 'block';
@@ -25,7 +24,6 @@ export function mediaFactory(data, indexImage) {
         } else {
             const video = document.createElement('video');
             video.setAttribute('id', 'player');
-            video.setAttribute('playsinline', '');
             video.setAttribute('controls', '');
             const source = document.createElement('source');
             source.setAttribute('src', movie);
