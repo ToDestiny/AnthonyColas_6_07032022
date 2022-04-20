@@ -88,6 +88,8 @@ async function init() {
     return data;
 }
 
+// Escape key press during modal
+
 const modal = document.getElementById('lightbox');
 
 window.addEventListener('keydown', function (event) {
@@ -101,14 +103,22 @@ window.addEventListener('keydown', function (event) {
     }
 });
 
+// Carrousel modal left and right arrows && sort function
+
 (async () => {
     const data = await init();
 
+    // Const left/right arrows
     const left = document.getElementById('left-arrow');
     const right = document.getElementById('right-arrow');
     const photos = data.media.filter(function (elt) {
         return elt.photographerId == id;
     });
+
+    //Const sort function
+    const popularity = document.getElementById('sort-popularity');
+    const date = document.getElementById('sort-popularity');
+    const title = document.getElementById('sort-title');
 
     left.addEventListener('click', function () {
         const lightbox = document.getElementById('lightbox');
@@ -122,11 +132,19 @@ window.addEventListener('keydown', function (event) {
             const image = document.getElementById('lightboxImg');
             const imageExist = 'image' in photos[index];
             if (imageExist) {
+                const img = document.getElementById('img-lightbox');
+                img.style.display = 'flex';
+                const video = document.getElementById('video-lightbox');
+                video.style.display = 'none';
                 const picture = `assets/media/${id}/${photos[index].image}`;
                 image.src = picture;
             } else {
-                const video = `assets/media/${id}/${photos[index].video}`;
-                image.src = video;
+                const img = document.getElementById('img-lightbox');
+                img.style.display = 'none';
+                const video = document.getElementById('video-lightbox');
+                video.style.display = 'flex';
+                /*                 const video = `assets/media/${id}/${photos[index].video}`;
+                image.src = video; */
             }
         }
     });
@@ -134,7 +152,7 @@ window.addEventListener('keydown', function (event) {
         const lightbox = document.getElementById('lightbox');
         let index = lightbox.getAttribute('data-index');
         let j = photos.length;
-        let i = 0;
+        let i = index;
         if (i < j) {
             i++;
             index++;
@@ -145,12 +163,28 @@ window.addEventListener('keydown', function (event) {
             const image = document.getElementById('lightboxImg');
             const imageExist = 'image' in photos[index];
             if (imageExist) {
+                const img = document.getElementById('img-lightbox');
+                img.style.display = 'flex';
+                const video = document.getElementById('video-lightbox');
+                video.style.display = 'none';
                 const picture = `assets/media/${id}/${photos[index].image}`;
                 image.src = picture;
             } else {
-                const video = `assets/media/${id}/${photos[index].video}`;
-                image.src = video;
+                const img = document.getElementById('img-lightbox');
+                img.style.display = 'none';
+                const video = document.getElementById('video-lightbox');
+                video.style.display = 'flex';
+                /*                 const video = `assets/media/${id}/${photos[index].video}`;
+                image.src = video; */
             }
         }
     });
+
+    // Sort function
+    popularity.addEventListener('click', function () {
+        photos.sort();
+        console.log('test');
+    });
+    date.addEventListener('click', function () {});
+    title.addEventListener('click', function () {});
 })();

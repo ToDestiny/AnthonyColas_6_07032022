@@ -218,18 +218,43 @@ form input {
     position: fixed;
     z-index: 1000;
     top: 10vh;
-    left: 20vh;
+    left: 15vh;
     width: 100%;
     height: 100%;
     display: none;
+    justify-self: center;
+    align-items: center;
+}
+
+#img-lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#video-lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#player-modal {
+    height: 100%;
+    width: 100%;
 }
 
 .lightbox-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 80%;
     width: 80%;
+
 }
 
 .lightbox-right {
@@ -238,6 +263,10 @@ form input {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+}
+.lightbox-left {
+    height: 100%;
+    width: 100%;
 }
 
 #close-btn {
@@ -249,4 +278,5 @@ form input {
     max-height: 100%;
     padding: 10px;
     margin-left: 20px;
+    object-fit: contain
 }

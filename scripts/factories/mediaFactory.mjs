@@ -31,6 +31,7 @@ export function mediaFactory(data, indexImage) {
             source.setAttribute('src', movie);
             source.setAttribute('type', 'video/mp4');
             video.appendChild(source);
+
             return video;
         }
     }

@@ -87,16 +87,23 @@
       <div class="photo_filter">
         <label id="photo_label" for="photo_select">Trier par</label>
         <select name="photo_select" id="photo_select">
-          <option value="popularity">Popularité</option>
-          <option value="date">Date</option>
-          <option value="title">Titre</option>
+          <option id="sort-popularity" value="popularity">Popularité</option>
+          <option id="sort-date" value="date">Date</option>
+          <option id="sort-title" value="title">Titre</option>
         </select>
       </div>
       <section class="photo_section"></section>
-      <div id="lightbox" class="hidden">
+      <div id="lightbox">
         <div class="lightbox-container">
           <i class="fa-solid fa-angle-left fa-3x"  id="left-arrow" aria-hidden="true"></i>
-          <img src="#" id="lightboxImg" class="lightbox-left"/>
+          <div id="img-lightbox">
+            <img src="#" id="lightboxImg" class="lightbox-left" />
+          </div>
+          <div id="video-lightbox">
+            <video id="player-modal" playsinline controls>
+              <source src="assets/media/82/Art_Wooden_Horse_Sculpture.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="lightbox-right">
             <i class="fa fa-times fa-3x" id="close-btn" aria-hidden="true" onclick="closePicture()"></i>
             <i class="fa-solid fa-angle-right fa-3x" id="right-arrow" aria-hidden="true"></i>
@@ -109,7 +116,6 @@
 		</div>
     <script src="./scripts/utils/contactForm.js"></script>
     <script src="./scripts/utils/closePicture.js"></script>
-    <script src="./scripts/utils/likes.js" defer></script>
     <script  type="module" src="./scripts/pages/photographer.mjs"></script>
     <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
   </body>
