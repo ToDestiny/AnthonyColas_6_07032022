@@ -70,8 +70,6 @@ function displayFooter(photographer) {
     }); */
 }
 
-function leftArrow() {}
-
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
@@ -118,9 +116,7 @@ window.addEventListener('keydown', function (event) {
     });
 
     //Const sort function
-    const popularity = document.getElementById('sort-popularity');
-    const date = document.getElementById('sort-popularity');
-    const title = document.getElementById('sort-title');
+    const sort = document.getElementById('photo_select');
 
     function leftArrow() {
         const lightbox = document.getElementById('lightbox');
@@ -198,10 +194,22 @@ window.addEventListener('keydown', function (event) {
     right.addEventListener('click', rightArrow);
 
     // Sort function
-    popularity.addEventListener('click', function () {
-        photos.sort();
-        console.log('test');
+    function sortMedia(value) {
+        if (value === 'popularity') {
+            return photos.sort((a, b) => b.likes - a.likes);
+        }
+        if (value === 'date') {
+            return photos.sort((a, b) => new Date(a.date) - new Date(b.date));
+        }
+        if (value === 'title') {
+            return photos.sort((a, b) => a.title.localeCompare(b.title));
+        }
+    }
+
+    sort.addEventListener('change', function () {
+        const sortedMedia = sortMedia(this.value);
+        console.log(sortedMedia);
+        document.getElementById('photo-booth').innerHTML = '';
+        displayMedia(sortedMedia);
     });
-    date.addEventListener('click', function () {});
-    title.addEventListener('click', function () {});
 })();
