@@ -70,6 +70,8 @@ function displayFooter(photographer) {
     }); */
 }
 
+function leftArrow() {}
+
 async function init() {
     // Récupère les datas des photographes
     const data = await getData();
@@ -120,7 +122,7 @@ window.addEventListener('keydown', function (event) {
     const date = document.getElementById('sort-popularity');
     const title = document.getElementById('sort-title');
 
-    left.addEventListener('click', function () {
+    function leftArrow() {
         const lightbox = document.getElementById('lightbox');
         let index = lightbox.getAttribute('data-index');
         if (index >= 1) {
@@ -143,12 +145,11 @@ window.addEventListener('keydown', function (event) {
                 img.style.display = 'none';
                 const video = document.getElementById('video-lightbox');
                 video.style.display = 'flex';
-                /*                 const video = `assets/media/${id}/${photos[index].video}`;
-                image.src = video; */
             }
         }
-    });
-    right.addEventListener('click', function () {
+    }
+
+    function rightArrow() {
         const lightbox = document.getElementById('lightbox');
         let index = lightbox.getAttribute('data-index');
         let j = photos.length;
@@ -181,7 +182,21 @@ window.addEventListener('keydown', function (event) {
                 videoMedia.load();
             }
         }
+    }
+
+    window.addEventListener('keydown', function (event) {
+        console.log('lol');
+        if (event.key === 'ArrowLeft') {
+            leftArrow();
+        } else if (event.key === 'ArrowRight') {
+            rightArrow();
+        } else {
+            return;
+        }
     });
+
+    left.addEventListener('click', leftArrow);
+    right.addEventListener('click', rightArrow);
 
     // Sort function
     popularity.addEventListener('click', function () {
