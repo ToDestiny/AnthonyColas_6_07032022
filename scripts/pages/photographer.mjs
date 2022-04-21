@@ -185,7 +185,6 @@ window.addEventListener('keydown', function (event) {
     }
 
     window.addEventListener('keydown', function (event) {
-        console.log('lol');
         if (event.key === 'ArrowLeft') {
             leftArrow();
         } else if (event.key === 'ArrowRight') {
