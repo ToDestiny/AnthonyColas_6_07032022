@@ -148,10 +148,6 @@ form input {
     border-radius: 50%;
 }
 
-.photo_filter {
-    margin: 20px 20px 50px 55px;
-}
-
 #photo_label {
     font-weight: bold;
 }
@@ -278,5 +274,97 @@ form input {
     max-height: 100%;
     padding: 10px;
     margin-left: 20px;
-    object-fit: contain
+    object-fit: contain;
+}
+
+/* Dropdown Filter */
+
+/* The container must be positioned relative: */
+.photo_filter {
+    position: relative;
+    margin: 20px 20px 50px 55px;
+    display: flex;
+    align-items: center;
+}
+
+.photo_filter select {
+    display: none;
+    /*hide original SELECT element: */
+}
+
+.select-selected {
+        height: 2.5em;
+        width: 7em;
+        background: #911C1C;
+        border-radius: 5px;
+        color: white;
+        padding: 15px 20px 15px 15px;
+        margin-left: 20px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 25px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    left: 200px;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 15px;
+    left: 200px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,
+.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: #911C1C;
+    height: 2.5em;
+    width: 8em;
+    background: #911C1C;
+    border-radius: 0px 0 5px 5px;
+    color: white;
+    padding: 15px 20px 15px 0px;
+    margin-left: 20px;
+    top: 100%;
+    left: 60px;
+    right: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
 }

@@ -86,14 +86,14 @@
 			</div>
       <div class="photo_filter">
         <label id="photo_label" for="photo_select">Trier par</label>
-        <select name="photo_select" id="photo_select">
+        <select name="photo_select">
           <option id="sort-popularity" value="popularity">Popularité</option>
           <option id="sort-date" value="date">Date</option>
           <option id="sort-title" value="title">Titre</option>
         </select>
       </div>
       <section class="photo_section" id="photo-booth"></section>
-      <div id="lightbox" aria-label="modal des photos du photographe"></div>>
+      <div id="lightbox" aria-label="modal des photos du photographe">
         <div class="lightbox-container">
           <i class="fa-solid fa-angle-left fa-3x"  id="left-arrow" aria-hidden="true"></i>
           <div id="img-lightbox">
@@ -117,6 +117,7 @@
     <script src="./scripts/utils/contactForm.js"></script>
     <script src="./scripts/utils/closePicture.js"></script>
     <script  type="module" src="./scripts/pages/photographer.mjs"></script>
+    <script type="module" src="./scripts/utils/sortFilter.mjs"></script>
     <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
   </body>
 </html>

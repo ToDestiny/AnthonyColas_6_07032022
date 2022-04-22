@@ -26,7 +26,7 @@ function displayFormName(photographer) {
     document.getElementById('form_name').innerHTML = `${photographer.name}`;
 }
 
-function displayMedia(photos) {
+export function displayMedia(photos) {
     const photoSection = document.querySelector('.photo_section');
 
     photos.forEach((media, i) => {
@@ -84,6 +84,7 @@ async function init() {
     displayInfo(photographer[0]);
     displayFooter(photographer[0]);
     displayMedia(photos);
+    window.mydata = photos;
     displayFormName(photographer[0]);
     return data;
 }
@@ -205,7 +206,6 @@ window.addEventListener('keydown', function (event) {
             return photos.sort((a, b) => a.title.localeCompare(b.title));
         }
     }
-
     sort.addEventListener('change', function () {
         const sortedMedia = sortMedia(this.value);
         console.log(sortedMedia);
