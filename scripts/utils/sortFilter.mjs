@@ -1,6 +1,18 @@
 import { displayMedia } from '../pages/photographer.mjs';
 
 let x, i, j, l, ll, selElmnt, a, b, c;
+
+// Sort function
+function sortMedia(value) {
+    if (value === 'Date') {
+        return window.mydata.sort(
+            (a, b) => new Date(a.date) - new Date(b.date)
+        );
+    }
+    if (value === 'Titre') {
+        return window.mydata.sort((a, b) => a.title.localeCompare(b.title));
+    } else return window.mydata.sort((a, b) => b.likes - a.likes);
+}
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName('photo_filter');
 l = x.length;
@@ -30,8 +42,7 @@ for (i = 0; i < l; i++) {
             for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
-                    h.innerHTML = this.innerHTML;
-                    o = h.innerHTML;
+                    o = this.innerHTML;
                     console.log(o);
                     y =
                         this.parentNode.getElementsByClassName(
@@ -43,22 +54,6 @@ for (i = 0; i < l; i++) {
                     }
                     this.setAttribute('class', 'same-as-selected');
                     break;
-                }
-            }
-            // Sort function
-            function sortMedia(value) {
-                if (value === 'Popularité') {
-                    return window.mydata.sort((a, b) => b.likes - a.likes);
-                }
-                if (value === 'Date') {
-                    return window.mydata.sort(
-                        (a, b) => new Date(a.date) - new Date(b.date)
-                    );
-                }
-                if (value === 'Titre') {
-                    return window.mydata.sort((a, b) =>
-                        a.title.localeCompare(b.title)
-                    );
                 }
             }
             console.log(o);
@@ -74,6 +69,7 @@ for (i = 0; i < l; i++) {
     a.addEventListener('click', function (e) {
         /* When the select box is clicked, close any other select boxes,
     and open/close the current select box: */
+        console.log(e);
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle('select-hide');
