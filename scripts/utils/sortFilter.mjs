@@ -43,7 +43,6 @@ for (i = 0; i < l; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     o = this.innerHTML;
-                    console.log(o);
                     y =
                         this.parentNode.getElementsByClassName(
                             'same-as-selected'
@@ -56,9 +55,7 @@ for (i = 0; i < l; i++) {
                     break;
                 }
             }
-            console.log(o);
             const sortedMedia = sortMedia(o);
-            console.log(sortedMedia);
             document.getElementById('photo-booth').innerHTML = '';
             displayMedia(sortedMedia);
             h.click();
@@ -69,7 +66,6 @@ for (i = 0; i < l; i++) {
     a.addEventListener('click', function (e) {
         /* When the select box is clicked, close any other select boxes,
     and open/close the current select box: */
-        console.log(e);
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle('select-hide');

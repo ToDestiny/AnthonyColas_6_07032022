@@ -202,9 +202,3 @@ window.addEventListener('keydown', function (event) {
     left.addEventListener('click', leftArrow);
     right.addEventListener('click', rightArrow);
 })();
-
-window.addEventListener('storage', function (e) {
-    if (e.storageArea === localStorage) {
-        console.log('BRAAAAA');
-    }
-});
