@@ -62,7 +62,7 @@ function displayInfo(photographer) {
 }
 
 function displayFooter(photographer) {
-    let totalLikes = sessionStorage.getItem('totalLikes');
+    let totalLikes = localStorage.getItem('totalLikes');
     document.getElementById(
         'footer'
     ).innerHTML = `${totalLikes} \u2665 ${photographer.price}€/jour`;
@@ -123,7 +123,7 @@ window.addEventListener('keydown', function (event) {
             let likes = photos[i].likes;
             totalLikes += likes;
         }
-        sessionStorage.setItem('totalLikes', totalLikes);
+        localStorage.setItem('totalLikes', totalLikes);
     }
     getLikes(photos);
 
@@ -202,3 +202,9 @@ window.addEventListener('keydown', function (event) {
     left.addEventListener('click', leftArrow);
     right.addEventListener('click', rightArrow);
 })();
+
+window.addEventListener('storage', function (e) {
+    if (e.storageArea === localStorage) {
+        console.log('BRAAAAA');
+    }
+});
