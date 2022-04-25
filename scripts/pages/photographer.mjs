@@ -63,9 +63,10 @@ function displayInfo(photographer) {
 
 function displayFooter(photographer) {
     let totalLikes = localStorage.getItem('totalLikes');
+    document.getElementById('footer-likes').innerHTML = `${totalLikes} \u2665`;
     document.getElementById(
-        'footer'
-    ).innerHTML = `${totalLikes} \u2665 ${photographer.price}€/jour`;
+        'footer-price'
+    ).innerHTML = `  ${photographer.price}€/jour`;
 }
 
 async function init() {

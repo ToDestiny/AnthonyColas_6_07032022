@@ -54,7 +54,7 @@ export function mediaFactory(data, indexImage) {
         h5.style.marginTop = '35px';
         h5.style.color = '#911C1C';
         h5.textContent = `${likes} \u2665`;
-        h5.setAttribute('onclick', 'incrementLike(this.id)');
+        h5.setAttribute('onclick', `incrementLike(this.id)`);
         h5.setAttribute('class', 'like');
         h5.setAttribute('id', Math.floor(Math.random() * 100));
         article.appendChild(obj);

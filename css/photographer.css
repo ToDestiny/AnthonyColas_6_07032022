@@ -200,6 +200,10 @@ form input {
     align-items: center;
 }
 
+#footer-price {
+    margin-left: 20px;
+}
+
 #player {
     height: 300px;
     width: 350px;
