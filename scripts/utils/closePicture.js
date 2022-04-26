@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function closePicture() {
     document
         .getElementById('main-wrapper')

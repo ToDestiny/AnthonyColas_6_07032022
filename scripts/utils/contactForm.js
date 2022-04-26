@@ -1,4 +1,5 @@
 // Functions
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
     document.getElementById('main-wrapper').setAttribute('aria-hidden', 'true');
     document
@@ -9,6 +10,7 @@ function displayModal() {
     document.querySelector('.contact_button').focus();
 }
 
+// eslint-disable-next-line no-unused-vars
 function closeModal() {
     document
         .getElementById('main-wrapper')
@@ -21,6 +23,7 @@ function closeModal() {
     document.querySelector('.modal-close-btn').focus();
 }
 
+// eslint-disable-next-line no-unused-vars
 function submitInfo() {
     // Get the form
     let form = document.querySelector('#post');

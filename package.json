@@ -4,7 +4,8 @@
   "description": "## Démarrer le projet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/ToDestiny/Front-End-Fisheye#readme",
   "devDependencies": {
-    "plyr": "^3.6.12"
+    "eslint": "^8.14.0",
+    "plyr": "^3.7.2"
   }
 }

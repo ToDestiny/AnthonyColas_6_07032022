@@ -7,6 +7,7 @@ const price = window.mydata;
 console.log(price);
 console.log(id);
 
+// eslint-disable-next-line no-unused-vars
 function incrementLike(id) {
     let bool = localStorage.getItem(`bool${id}`);
     if (bool === '1') {
