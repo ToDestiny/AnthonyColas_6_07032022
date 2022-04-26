@@ -1,12 +1,5 @@
 //Deal with likes on the page
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('myparam');
-const price = window.mydata;
-console.log(price);
-console.log(id);
-
 // eslint-disable-next-line no-unused-vars
 function incrementLike(id) {
     let bool = localStorage.getItem(`bool${id}`);
